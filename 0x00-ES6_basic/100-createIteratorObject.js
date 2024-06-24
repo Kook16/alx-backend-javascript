@@ -3,5 +3,3 @@ export default function createIteratorObject(report) {
   Object.values(report.allEmployees).forEach((val) => items.push(...val));
   return items;
 }
-
-  
