@@ -1,8 +1,8 @@
+//  for of does not give access to idx of elems: disable es6
 export default function appendToEachArrayValue(array, appendString) {
-    for (const idx in array) {
-      const value = array[idx];
-      array[idx] = appendString + value;
-    }
-  
-    return array;
+  const temp = [];
+  for (const idx of array) {
+    temp.push(appendString + idx);
   }
+  return temp;
+}
