@@ -1,7 +1,5 @@
-import { string } from "yargs";
-
 export default class Currency {
-  constructor(code , name) {
+  constructor(code, name) {
     this._code = code;
     this._name = name;
   }
@@ -9,11 +7,12 @@ export default class Currency {
   get name() {
     return this._name;
   }
+
   set name(val) {
-    if (typeof val === String) {
-      this._name = val
+    if (typeof val === 'string') {
+      this._name = val;
     } else {
-      throw new TypeError('name must be a strings');
+      throw new TypeError('Name must be a string');
     }
   }
 
@@ -22,14 +21,14 @@ export default class Currency {
   }
 
   set code(val) {
-    if (typeof val === String) {
-      this._code = val
+    if (typeof val === 'string') {
+      this._code = val;
     } else {
-      throw new TypeError('code must be a strings');
+      throw new TypeError('Code must be a string');
     }
   }
 
-  displayFullCurrency () {
-    return `${this.name} (${this.code})`
+  displayFullCurrency() {
+    return `${this.name} (${this.code})`;
   }
 }

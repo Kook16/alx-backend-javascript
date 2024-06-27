@@ -5,12 +5,10 @@ export default class HolbertonCourse {
     this._students = students;
   }
 
-  // Getter for name
   get name() {
     return this._name;
   }
 
-  // Setter for name with validation
   set name(val) {
     if (typeof val === 'string') {
       this._name = val;
@@ -19,12 +17,10 @@ export default class HolbertonCourse {
     }
   }
 
-  // Getter for length
   get length() {
     return this._length;
   }
 
-  // Setter for length with validation
   set length(val) {
     if (typeof val === 'number') {
       this._length = val;
@@ -33,12 +29,10 @@ export default class HolbertonCourse {
     }
   }
 
-  // Getter for students
   get students() {
     return this._students;
   }
 
-  // Setter for students with validation
   set students(val) {
     if (Array.isArray(val) && val.every(student => typeof student === 'string')) {
       this._students = val;
