@@ -1,4 +1,4 @@
-export default (array) => {
+export default function getStudentIdsSum(array) {
   if (!Array.isArray(array)) {
     return -1;
   }
@@ -6,4 +6,4 @@ export default (array) => {
     (accumulator, obj) => accumulator + obj.id, 0,
   );
   return totalSum;
-};
+}
