@@ -4,26 +4,26 @@ const path = require('path');
 
 const app = http.createServer((req, res) => {
   if (req.url === '/') {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     const databaseFile = process.argv[2];
 
     if (!databaseFile) {
-      res.writeHead(400, {'Content-Type': 'text/plain'});
+      res.writeHead(400, { 'Content-Type': 'text/plain' });
       res.end('Database file is required');
 
-return;
+      return;
     }
 
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.write('This is the list of our students\n');
 
     fs.readFile(databaseFile, 'utf8', (err, data) => {
       if (err) {
         res.end(`Cannot load the database: ${err.message}`);
 
-return;
+        return;
       }
 
       const lines = data.split('\n').filter((line) => line.trim() !== '');
@@ -58,13 +58,13 @@ return;
       res.end();
     });
   } else {
-    res.writeHead(404, {'Content-Type': 'text/plain'});
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('Not Found');
   }
 });
 
 app.listen(1245, () => {
-  console.log('Server listening on port 1245');
+  // console.log('Server listening on port 1245');
 });
 
 module.exports = app;
